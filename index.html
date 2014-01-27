@@ -61,6 +61,7 @@
                     <h2>Subtle Sidebar is the Perfect Template for your Next Portfolio Website Project!</h2>
                     <p class="lead">This template really has it all. It's up to you to customize it to your liking! It features some fresh photography courtesy of <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>.</p>
                 </div>
+
             </div>
         </div>
     </div>
@@ -215,9 +216,43 @@
     </footer>
     <!-- /Footer -->
 
+<script id="profile-template" type="text/x-handlebars-template">
+   {{#each profiles}}
+      <img src="{{image}}"/>
+      <h2>{{name}}</h2>
+      <div>{{blurb}}</div>
+  {{/each}}
+</script>
+
     <!-- JavaScript -->
-    <script src="http//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="/js/handlebars.js"></script>
+    <!-- javascript for loading data -->
+    <script src="js/tabletop.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+
+        var profileTemplate = Handlebars.compile($('#profile-template').html())
+
+        var gData
+        var URL='0Ais_vJXjpYjUdG1Md1E5UUd5V2Zzbm9Xb0tjR3ZYeVE'
+
+        Tabletop.init( { key: URL, callback: showProfiles, simpleSheet: true } )
+
+          function showProfiles(data) {
+            console.log(data)
+            $('#about > .container').append(profileTemplate({
+                profiles: data
+            }))
+          }
+
+
+
+      })
+
+
+    </script>
 
     <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
     <script>
