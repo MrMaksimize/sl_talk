@@ -1,8 +1,26 @@
-.left {
-	text-align: left;
+body, h1, h2, h3, h4, h5 {
+	font-family: 'Roboto', sans-serif;
 }
 
 .partner-profile {
 	margin-bottom: 35px;
 	margin-top: 40px;
+}
+
+.vert-text h1 {
+	font-weight: 300;
+}
+
+.services {
+	background: #1A47B0;
+}
+
+.btn-default {
+	color: #fff;
+	background-color: #313B4A;
+}
+
+.callout .vert-text h1{
+	color: #EDD21F;
+	font-weight: 400;
 }
