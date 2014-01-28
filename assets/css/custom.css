@@ -24,3 +24,7 @@ body, h1, h2, h3, h4, h5 {
 	color: #EDD21F;
 	font-weight: 400;
 }
+
+.header {
+	background: url(../img/SL_skyline.jpg) center center fixed;
+}
