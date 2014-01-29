@@ -28,3 +28,13 @@ body, h1, h2, h3, h4, h5 {
 .header {
 	background: url(../img/SL_skyline.jpg) center center fixed;
 }
+
+.sebastian {
+	background: url(../img/sebastian.png) no-repeat center center;
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+/* 	line-height: 136px; */
+	vertical-align: middle;
+	text-align: center;
+}
