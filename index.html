@@ -32,7 +32,6 @@
     <!-- /Full Page Image Header Area -->
 
 
-    <!-- Services -->
     <div id="services" class="services">
         <div class="container">
             <div class="row">
@@ -41,74 +40,8 @@
                     <hr>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center">
-                    <div class="service-item partner-profile">
-                        <i class="service-icon fa fa-rocket"></i>
-                        <h2>Clark Smith</h2>
-                        <h4>Crosslinks Network, President | Broadband</h4>
-	                        <blockquote>
-		                        <p>"They presented me with this space and it was half the price of what we were paying in Oakland and double size"</p>
-	                        </blockquote>
-	                    <a href="mailto:you@youraddress.com" class="btn btn-default btn-lg">Let's Get Coffee</a>
-                    </div>
-                </div>
-            </div>
-			<div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center">
-                    <div class="service-item partner-profile">
-                        <i class="sebastian"></i>
-                        <h2>Sebastian Cabrera</h2>
-                        <h4>Optimum Tempus | Eyewear</h4>
-	                        <blockquote>
-		                        <p>"I used to be in logistics, the oakland port is ten minutes from my office, geography is important because I ship and receive a lot from overseas."</p>
-	                        </blockquote>
-	                    <a href="mailto:you@youraddress.com" class="btn btn-default btn-lg">Let's Get Coffee</a>
-                    </div>
-                </div>
-            </div>
-			<div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center">
-                    <div class="service-item partner-profile">
-                        <i class="service-icon fa fa-rocket"></i>
-                        <h2>Ben Simon Thomas</h2>
-                        <h4>Soundfit 3D | 3D Scanning</h4>
-	                        <blockquote>
-		                        <p>"We moved to San Leandro because our partner and potential investors were there."</p>
-	                        </blockquote>
-	                    <a href="mailto:you@youraddress.com" class="btn btn-default btn-lg">Let's Get Coffee</a>
-                    </div>
-                </div>
-            </div>
-			<div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center">
-                    <div class="service-item partner-profile">
-                        <i class="service-icon fa fa-rocket"></i>
-                        <h2>Espen Siversten</h2>
-                        <h4>Type A Machines, CEO | 3D printing</h4>
-	                        <blockquote>
-		                        <p>"We were worried about crime in San Leandro, we researched crime statistics and found out it is a pretty safe place."</p>
-	                        </blockquote>
-	                    <a href="mailto:you@youraddress.com" class="btn btn-default btn-lg">Let's Get Coffee</a>
-                    </div>
-                </div>
-            </div>
-			<div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center">
-                    <div class="service-item partner-profile">
-                        <i class="service-icon fa fa-rocket"></i>
-                        <h2>Steve Scales</h2>
-                        <h4>Power Factors, LLC | Partner</h4>
-	                        <blockquote>
-		                        <p>"Poignant Quote TBD"</p>
-	                        </blockquote>
-	                    <a href="mailto:you@youraddress.com" class="btn btn-default btn-lg">Let's Get Coffee</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-    <!-- /Services -->
 
     <!-- Callout -->
     <div class="callout">
@@ -155,41 +88,27 @@
 
 <script id="profile-template" type="text/x-handlebars-template">
    {{#each profiles}}
-      <img src="{{image}}"/>
-      <h2>{{name}}</h2>
-      <div>{{blurb}}</div>
-  {{/each}}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <div class="service-item partner-profile">
+                <i class="service-icon fa fa-rocket"></i>
+                <h2>{{name}}</h2>
+                <h4><a href="{{companyurl}}">{{companyname}}</a>, {{title}} | {{industry}}</h4>
+                    <blockquote>
+                        <p>"{{quote}}"</p>
+                    </blockquote>
+                <a href="{{emailLink}}" class="btn btn-default btn-lg">Let&#39;s Get Coffee</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}      
 </script>
 
     <!-- JavaScript -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="js/handlebars.js"></script>
-    <!-- javascript for loading data -->
-    <script src="js/tabletop.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-
-        var profileTemplate = Handlebars.compile($('#profile-template').html())
-
-        var gData
-        var URL='0Ais_vJXjpYjUdG1Md1E5UUd5V2Zzbm9Xb0tjR3ZYeVE'
-
-        Tabletop.init( { key: URL, callback: showProfiles, simpleSheet: true } )
-
-          function showProfiles(data) {
-            console.log(data)
-            $('#about > .container').append(profileTemplate({
-                profiles: data
-            }))
-          }
-
-
-
-      })
-
-
-    </script>
+    <script src="js/app.js"></script>
 
     <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
     <script>
