@@ -21,7 +21,7 @@ body, h1, h2, h3, h4, h5 {
 }
 
 .callout .vert-text h1{
-	color: #EDD21F;
+	color: #fff;
 	font-weight: 400;
 }
 
@@ -31,4 +31,12 @@ body, h1, h2, h3, h4, h5 {
 
 .profile-pic {
 	border-radius: 70px;
+}
+
+blockquote {
+	border-left: none;
+}
+
+.btn-default {
+	border-color: none;
 }
