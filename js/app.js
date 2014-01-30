@@ -14,20 +14,21 @@
       Tabletop.init( { key: URL, callback: showProfiles, simpleSheet: true } )
 
         function showProfiles(profiles) {
-          //console.log(data)
           
           jQuery.each(profiles, function (i, profile) {
-            console.log('profile!', profile)
+
             profile.emailLink = 'mailto:' + 
               encodeURIComponent(profile.name + ' <' + profile.email + '>') +
               '?subject=' + encodeURIComponent(emailSubject) +
               '&body=' + encodeURIComponent(
                 'Hi, I saw your story on Build San Leandro and would like to get coffee sometime.\n\nI noticed you work in ' + profile.industry + ' and I\'d like to find out more about it in San Leandro.')
           })
-          console.log(profiles)
+
           $('#services > .container').append(profileTemplate({
               profiles: profiles
           }))
+
+          jQuery(document.body).trigger('profilesLoaded')
         }
 
 
