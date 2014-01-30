@@ -37,6 +37,11 @@ blockquote {
 	border-left: none;
 }
 
-.btn-default {
-	border-color: none;
+.btn {
+	border: none;
+}
+
+a:hover {
+	color: #313B4A;
+	text-decoration: none;	
 }
